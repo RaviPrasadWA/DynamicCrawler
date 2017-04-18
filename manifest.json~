@@ -17,7 +17,7 @@
 		},
 		"default_title": "Mamata Scraper"
 	},
-	"devtools_page": "devtools/devtools_init_page.html",
+	"options_page": "options_page/options.html",
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 	"background": {
 		"scripts": [
