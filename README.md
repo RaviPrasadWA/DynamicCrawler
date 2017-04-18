@@ -12,3 +12,6 @@ TODOS:
   - Login.
   - Restore frame session on action/redirection.
   - Maintain session INFO
+  
+########## IMPORTANT ##############
+Free product and once again thanks to colllaborators and contributors/OPen-Source communities around the world for enabling the knowledge and implementation required to do this project.
