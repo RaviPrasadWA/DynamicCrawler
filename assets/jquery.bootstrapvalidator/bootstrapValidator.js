@@ -828,7 +828,6 @@
                 // Reset the flag
                 this._submitIfValid = false;
             }
-
             var that  = this,
                 type  = fields.attr('type'),
                 group = this.options.fields[field].group || this.options.group,

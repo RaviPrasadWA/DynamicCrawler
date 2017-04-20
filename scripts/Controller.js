@@ -174,6 +174,9 @@ SitemapController.prototype = {
 				"#selector-tree tr button[action=data-preview-selector]": {
 					click: this.previewSelectorDataFromSelectorTree
 				},
+				"#edit-selector button[action=select-username-selector]": {
+					click: this.selectSelector
+				},
 				"#edit-selector button[action=select-selector]": {
 					click: this.selectSelector
 				},
@@ -191,6 +194,9 @@ SitemapController.prototype = {
 				},
 				"#edit-selector button[action=preview-table-row-selector]": {
 					click: this.previewTableRowSelector
+				},
+				"#edit-selector button[action=preview-username-selector]": {
+					click: this.previewUsernameSelector
 				},
 				"#edit-selector button[action=preview-selector-data]": {
 					click: this.previewSelectorDataFromSelectorEditing

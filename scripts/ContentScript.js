@@ -107,7 +107,6 @@ var ContentScript = {
 			sidebar.style.cssText = "\
 				position:fixed;\
 				top:0px;\
-				right:0px;\
 				width:35%;\
 				height:100%;\
 				background:white;\
