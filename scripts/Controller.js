@@ -679,6 +679,20 @@ SitemapController.prototype = {
 						}
 					}
 				},
+				usernameSelector: {
+					validators: {
+						notEmpty: {
+							message: 'Username selector is required and cannot be empty'
+						}
+					}
+				},
+				passwordSelector: {
+					validators: {
+						notEmpty: {
+							message: 'Password selector is required and cannot be empty'
+						}
+					}
+				},
 				tableHeaderRowSelector: {
 					validators: {
 						notEmpty: {
@@ -866,6 +880,8 @@ SitemapController.prototype = {
 		var tableDataRowSelector = $("#edit-selector [name=tableDataRowSelector]").val();
 		var tableHeaderRowSelector = $("#edit-selector [name=tableHeaderRowSelector]").val();
 		var clickElementSelector = $("#edit-selector [name=clickElementSelector]").val();
+		var usernameSelector = $("#edit-selector [name=usernameSelector]").val();
+		var passwordSelector = $("#edit-selector [name=passwordSelector]").val();
 		var type = $("#edit-selector [name=type]").val();
 		var clickElementUniquenessType = $("#edit-selector [name=clickElementUniquenessType]").val();
 		var clickType = $("#edit-selector [name=clickType]").val();
@@ -899,6 +915,8 @@ SitemapController.prototype = {
 			tableHeaderRowSelector: tableHeaderRowSelector,
 			tableDataRowSelector: tableDataRowSelector,
 			clickElementSelector: clickElementSelector,
+			usernameSelector: usernameSelector,
+			passwordSelector: passwordSelector,
 			clickElementUniquenessType: clickElementUniquenessType,
 			clickType: clickType,
 			discardInitialElements: discardInitialElements,
