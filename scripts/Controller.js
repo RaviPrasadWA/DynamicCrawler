@@ -892,6 +892,8 @@ SitemapController.prototype = {
 		var regex = $("#edit-selector [name=regex]").val();
 		var delay = $("#edit-selector [name=delay]").val();
 		var extractAttribute = $("#edit-selector [name=extractAttribute]").val();
+		var fillUsername = $("#edit-selector [name=fillUsername]").val();
+		var fillPassword = $("#edit-selector [name=fillPassword]").val();
 		var parentSelectors = $("#edit-selector [name=parentSelectors]").val();
 		var columns = [];
 		var $columnHeaders = $("#edit-selector .column-header");
@@ -927,6 +929,8 @@ SitemapController.prototype = {
 			regex: regex,
 			extractAttribute:extractAttribute,
 			parentSelectors: parentSelectors,
+			fillUsername:fillUsername,
+			fillPassword:fillPassword,
 			columns:columns,
 			delay:delay
 		});

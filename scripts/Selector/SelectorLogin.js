@@ -10,6 +10,6 @@ var SelectorLogin = {
 	},
 	
 	getFeatures: function () {
-		return ['usernameSelector','passwordSelector'];
+		return ['usernameSelector','passwordSelector','fillUsername','fillPassword'];
 	}
 }
