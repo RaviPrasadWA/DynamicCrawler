@@ -97,25 +97,7 @@ var ContentScript = {
 		});
 		return deferredResponse;
 	},
-
-	fillSelector: function(request){
-		var deferredResponse = $.Deferred();
-		this.removeCurrentContentSelector().done(function () {
-			var contentSelector = new ContentSelector({
-				parentCSSSelector: request.parentCSSSelector
-			});
-			window.cs = contentSelector;
-			var deferredSelectorFill = contentSelector.fillSelector(request.elementCSSSelector,request.value); 
-			deferredSelectorFill.done(function() {
-				deferredResponse.resolve();
-			}).fail(function(message) {
-				deferredResponse.reject(message);
-				window.cs = undefined;
-			});
-		});
-		return deferredResponse;
-	},
-
+	
 	showUI: function(request){
 
 		if(FlagOnce){

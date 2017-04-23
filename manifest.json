@@ -37,7 +37,6 @@
 			"scripts/Selector/SelectorTable.js",
 			"scripts/Selector/SelectorElementScroll.js",
 			"scripts/Selector/SelectorElementClick.js",
-			"scripts/Selector/SelectorLogin.js",
 			"scripts/SelectorList.js",
 			"scripts/Sitemap.js",
 			"scripts/Queue.js",

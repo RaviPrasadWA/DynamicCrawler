@@ -699,6 +699,13 @@ SitemapController.prototype = {
 						}
 					}
 				},
+				submitSelector: {
+					validators: {
+						notEmpty: {
+							message: 'Submit selector is required and cannot be empty'
+						}
+					}
+				},
 				tableHeaderRowSelector: {
 					validators: {
 						notEmpty: {
@@ -764,10 +771,6 @@ SitemapController.prototype = {
 				{
 					type: 'SelectorLink',
 					title: 'Link'
-				},
-				{
-					type: 'SelectorLogin',
-					title: 'Login'
 				},
 				{
 					type: 'SelectorPopupLink',
@@ -886,8 +889,6 @@ SitemapController.prototype = {
 		var tableDataRowSelector = $("#edit-selector [name=tableDataRowSelector]").val();
 		var tableHeaderRowSelector = $("#edit-selector [name=tableHeaderRowSelector]").val();
 		var clickElementSelector = $("#edit-selector [name=clickElementSelector]").val();
-		var usernameSelector = $("#edit-selector [name=usernameSelector]").val();
-		var passwordSelector = $("#edit-selector [name=passwordSelector]").val();
 		var type = $("#edit-selector [name=type]").val();
 		var clickElementUniquenessType = $("#edit-selector [name=clickElementUniquenessType]").val();
 		var clickType = $("#edit-selector [name=clickType]").val();
@@ -898,8 +899,6 @@ SitemapController.prototype = {
 		var regex = $("#edit-selector [name=regex]").val();
 		var delay = $("#edit-selector [name=delay]").val();
 		var extractAttribute = $("#edit-selector [name=extractAttribute]").val();
-		var fillUsername = $("#edit-selector [name=fillUsername]").val();
-		var fillPassword = $("#edit-selector [name=fillPassword]").val();
 		var parentSelectors = $("#edit-selector [name=parentSelectors]").val();
 		var columns = [];
 		var $columnHeaders = $("#edit-selector .column-header");
@@ -923,8 +922,6 @@ SitemapController.prototype = {
 			tableHeaderRowSelector: tableHeaderRowSelector,
 			tableDataRowSelector: tableDataRowSelector,
 			clickElementSelector: clickElementSelector,
-			usernameSelector: usernameSelector,
-			passwordSelector: passwordSelector,
 			clickElementUniquenessType: clickElementUniquenessType,
 			clickType: clickType,
 			discardInitialElements: discardInitialElements,
@@ -935,8 +932,6 @@ SitemapController.prototype = {
 			regex: regex,
 			extractAttribute:extractAttribute,
 			parentSelectors: parentSelectors,
-			fillUsername:fillUsername,
-			fillPassword:fillPassword,
 			columns:columns,
 			delay:delay
 		});
@@ -1254,30 +1249,6 @@ SitemapController.prototype = {
 		var deferredHTML = this.contentScript.getHTML({CSSSelector: CSSSelector});
 
 		return deferredHTML;
-	},
-
-	previewUsername: function(button){
-		var sitemap = this.getCurrentlyEditedSelectorSitemap();
-		var selector = this.getCurrentlyEditedSelector();
-		var currentStateParentSelectorIds = this.getCurrentStateParentSelectorIds();
-		var parentCSSSelector = sitemap.selectors.getParentCSSSelectorWithinOnePage(currentStateParentSelectorIds);
-		var deferredSelectorPreview = this.contentScript.fillSelector({
-			parentCSSSelector: parentCSSSelector,
-			elementCSSSelector: selector.usernameSelector,
-			value: selector.fillUsername
-		});
-	},
-
-	previewPassword: function(button){
-		var sitemap = this.getCurrentlyEditedSelectorSitemap();
-		var selector = this.getCurrentlyEditedSelector();
-		var currentStateParentSelectorIds = this.getCurrentStateParentSelectorIds();
-		var parentCSSSelector = sitemap.selectors.getParentCSSSelectorWithinOnePage(currentStateParentSelectorIds);
-		var deferredSelectorPreview = this.contentScript.fillSelector({
-			parentCSSSelector: parentCSSSelector,
-			elementCSSSelector: selector.passwordSelector,
-			value: selector.fillPassword
-		});
 	},
 
 	previewSelector: function (button) {

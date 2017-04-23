@@ -116,14 +116,6 @@ ContentSelector.prototype = {
 		return this.deferredCSSSelectorResponse.promise();
 	},
 
-	fillSelector: function(elementCSSSelector,value){
-		if(this.deferredCSSSelectorResponse.state() !== "rejected") {
-			document.querySelector(elementCSSSelector).value = value;
-			this.deferredCSSSelectorResponse.resolve();
-		}
-		return this.deferredCSSSelectorResponse.promise()
-	},
-
 	initGUI: function () {
 
 		this.highlightParent();
