@@ -171,6 +171,9 @@ SitemapController.prototype = {
 				"#selector-tree tr button[action=preview-selector]": {
 					click: this.previewSelectorFromSelectorTree
 				},
+				"#edit-selector button[action=preview-selector-username]": {
+					click: this.previewUsername
+				},
 				"#selector-tree tr button[action=data-preview-selector]": {
 					click: this.previewSelectorDataFromSelectorTree
 				},
@@ -1249,6 +1252,19 @@ SitemapController.prototype = {
 
 		return deferredHTML;
 	},
+
+	previewUsername: function(button){
+		var sitemap = this.getCurrentlyEditedSelectorSitemap();
+		var selector = this.getCurrentlyEditedSelector();
+		var currentStateParentSelectorIds = this.getCurrentStateParentSelectorIds();
+		var parentCSSSelector = sitemap.selectors.getParentCSSSelectorWithinOnePage(currentStateParentSelectorIds);
+		var deferredSelectorPreview = this.contentScript.fillSelector({
+			parentCSSSelector: parentCSSSelector,
+			elementCSSSelector: selector.usernameSelector,
+			value: selector.fillUsername
+		});
+	},
+
 	previewSelector: function (button) {
 
 		if (!$(button).hasClass('preview')) {
