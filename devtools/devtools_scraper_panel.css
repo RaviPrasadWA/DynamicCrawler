@@ -25,6 +25,10 @@ a, tbody tr {
 	padding-right:3px;
 }
 
+.close-scraper {
+    padding-bottom: 3em;
+}
+
 .navbar {
     min-height:26px;
     margin-bottom: 6px;
